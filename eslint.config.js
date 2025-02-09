@@ -2,6 +2,7 @@ import globals from "globals";
 import pluginJs from "@eslint/js";// 检验js规范的（推荐）
 import tseslint from "typescript-eslint"; // 推荐的ts规范
 import pluginVue from "eslint-plugin-vue"; // 推荐的vue规范
+import prettierRecommended from 'eslint-plugin-prettier/recommended'
 
 // esModule commonjs
 /** @type {import('eslint').Linter.Config[]} */
@@ -23,5 +24,6 @@ export default [
       'no-console': 'warn',
       'semi': ['error']
     }
-  }
+  },
+  prettierRecommended //prettier 覆盖 eslint规则
 ];
