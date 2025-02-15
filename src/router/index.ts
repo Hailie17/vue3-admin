@@ -15,4 +15,5 @@ const routes: RouteRecordRaw[] = [
 export default createRouter({
   routes, // 路由表
   history: createWebHistory() //路由模式
+  // o'o'ooooo
 })
