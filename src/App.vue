@@ -8,7 +8,7 @@ const store = useCounterStore()
   <router-link to="/about">about</router-link>
   {{ store.count }}
   <button @click="store.increment">+</button>
-  <el-button>帅</el-button>
+  <el-button type="primary">帅</el-button>
   <router-view></router-view>
 </template>
 
