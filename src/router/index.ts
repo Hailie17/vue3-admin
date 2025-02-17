@@ -3,7 +3,7 @@ import type { RouteRecordRaw } from 'vue-router'
 
 const routes: RouteRecordRaw[] = [
   {
-    path: '/',
+    path: '/home',
     component: () => import('../views/Home.vue')
   },
   {
@@ -15,5 +15,4 @@ const routes: RouteRecordRaw[] = [
 export default createRouter({
   routes, // 路由表
   history: createWebHistory() //路由模式
-  // o'o'ooooo
 })
