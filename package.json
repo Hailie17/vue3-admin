@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@types/node": "^22.13.4",
+    "@unocss/transformer-directives": "^66.0.0",
     "element-plus": "^2.9.4",
     "pinia": "^3.0.1",
     "vue": "^3.5.13",
