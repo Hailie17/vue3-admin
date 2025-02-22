@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import path from 'path'
+import Unocss from 'unocss/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -10,5 +11,5 @@ export default defineConfig({
       replacement: path.resolve(__dirname, 'src')
     }]
   },
-  plugins: [vue()],
+  plugins: [vue(), Unocss()],
 })
