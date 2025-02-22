@@ -1,5 +1,5 @@
 <template>
-  <div class="app-wrapper" text-right>
+  <div class="app-wrapper">
     <div class="sidebar-container">侧导航栏</div>
     <div class="main-container">
       <div class="header">导航条1</div>
@@ -11,3 +11,8 @@
 
   </div>
 </template>
+<style lang="scss" scoped>
+.app-wrapper {
+  @apply text-red;
+}
+</style>

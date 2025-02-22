@@ -6,5 +6,5 @@ import transformerDirectives from '@unocss/transformer-directives'
 
 export default defineConfig({
   presets: [presetAttributify(), presetUno()],
-  transformers: [transformerDirectives()]
+  transformers: [transformerDirectives()] // apply类似写法
 })
