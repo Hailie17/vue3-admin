@@ -32,7 +32,7 @@
   }
   .app-main {
     @apply bg-cyan;
-    min-height: calc(100vh - 84px);
+    min-height: calc(100vh - var(--navBar-height) - var(--tagsview-height));
   }
 }
 </style>
