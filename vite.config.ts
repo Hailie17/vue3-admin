@@ -15,10 +15,11 @@ export default defineConfig({
     }]
   },
   plugins: [vue(), Unocss(), 
-    AutoImport({
+    AutoImport({ // 自动解析api
       resolvers: [ElementPlusResolver()],
     }),
-    Components({
+    Components({ // 自动解析组件
       resolvers: [ElementPlusResolver()],
+      dirs: ['src/components', 'src/layout/components'] // 组件自动加载导入
     }),],
 })
