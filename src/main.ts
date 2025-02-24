@@ -6,6 +6,7 @@ import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 import 'uno.css'
 import 'normalize.css/normalize.css'
+import '@/style/index.scss'
 
 const pinia = createPinia()
 

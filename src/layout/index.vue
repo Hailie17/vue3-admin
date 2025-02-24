@@ -16,17 +16,17 @@
 .app-wrapper {
   @apply flex w-full h-full;
   .sidebar-container {
-    @apply bg-red w-210px;
+    @apply bg-red w-[var(--sidebar-width)];
   }
   .main-container {
     @apply flex flex-col flex-1;
     .header {
       @apply h-84px;
       .navbar {
-        @apply h-50px bg-yellow;
+        @apply h-[var(--navBar-height)] bg-yellow;
       }
       .tags-view {
-        @apply h-34px bg-blue;
+        @apply h-[var(--tagsview-height)] bg-blue;
       }
     }
   }
