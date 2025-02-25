@@ -3,12 +3,13 @@ import pluginJs from "@eslint/js";// 检验js规范的（推荐）
 import tseslint from "typescript-eslint"; // 推荐的ts规范
 import pluginVue from "eslint-plugin-vue"; // 推荐的vue规范
 import prettierRecommended from 'eslint-plugin-prettier/recommended'
+import autoImport from './.eslintrc-auto-import.json'
 
 // esModule commonjs
 /** @type {import('eslint').Linter.Config[]} */
 export default [
   { files: ["**/*.{js,mjs,cjs,ts,vue}"] },
-  { languageOptions: { globals: { ...globals.browser, ...globals.node } } },
+  { languageOptions: { globals: { ...globals.browser, ...globals.node, ...autoImport.globals } } },
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
   ...pluginVue.configs["flat/essential"],

@@ -16,7 +16,9 @@ export default defineConfig({
   },
   plugins: [vue(), Unocss(), 
     AutoImport({ // 自动解析api
+      imports: ['vue', 'vue-router', 'pinia'],
       resolvers: [ElementPlusResolver()],
+      eslintrc: {enabled: false}, // 给eslint生成的配置，只需要一次
     }),
     Components({ // 自动解析组件
       resolvers: [ElementPlusResolver()],
