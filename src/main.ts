@@ -7,8 +7,9 @@ import 'element-plus/dist/index.css'
 import 'uno.css'
 import 'normalize.css/normalize.css'
 import '@/style/index.scss'
+import element from './plugins/element'
 
 const pinia = createPinia()
 
-createApp(App).use(router).use(pinia).use(ElementPlus).mount('#app')
+createApp(App).use(router).use(pinia).use(ElementPlus).use(element).mount('#app')
 // 0000

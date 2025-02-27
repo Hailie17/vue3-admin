@@ -6,6 +6,16 @@ import prettierRecommended from 'eslint-plugin-prettier/recommended'
 import autoImport from './.eslintrc-auto-import.json'
 
 // esModule commonjs
+// 1.
+// import autoImport from './.eslintrc-auto-import.json' with { type: 'json' }
+
+// 2.
+import { createRequire } from "module";
+const require = createRequire(import.meta.url)
+const autoImport = require('./.eslintrc-auto-import.json')
+
+// 3.  fs.readFile 
+
 /** @type {import('eslint').Linter.Config[]} */
 export default [
   { files: ["**/*.{js,mjs,cjs,ts,vue}"] },
