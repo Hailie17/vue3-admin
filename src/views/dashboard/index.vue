@@ -5,9 +5,9 @@
 
 <script lang="ts" setup>
 // 服务型组件 放到 示例上调用
-import { ElMessage } from 'element-plus'
+const { proxy } = getCurrentInstance()!
 const handle = () => {
-  ElMessage('Hi My dear')
+  proxy?.$message('Hi My dear')
 }
 
 const res = ref(0)
