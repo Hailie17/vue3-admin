@@ -5,6 +5,7 @@ import Unocss from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import ElementPlus from 'unplugin-element-plus/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -23,5 +24,8 @@ export default defineConfig({
     Components({ // 自动解析组件
       resolvers: [ElementPlusResolver()],
       dirs: ['src/components', 'src/layout/components'] // 组件自动加载导入
-    }),],
+    }),
+  ElementPlus({})
+  ],
+  // 888
 })
