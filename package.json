@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@types/node": "^22.13.4",
+    "@unocss/preset-icons": "66.1.0-beta.3",
     "@unocss/transformer-directives": "^66.0.0",
     "element-plus": "^2.9.4",
     "normalize.css": "^8.0.1",
@@ -20,6 +21,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.20.0",
+    "@iconify-json/ant-design": "^1.2.5",
     "@unocss/preset-attributify": "^66.0.0",
     "@unocss/preset-uno": "^66.0.0",
     "@vitejs/plugin-vue": "^5.2.1",
