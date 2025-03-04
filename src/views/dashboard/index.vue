@@ -1,6 +1,6 @@
 <template>
   <el-button>button</el-button>
-  <div i-ant-design:apple-filled></div>
+  <div i-ant-design:apple-filled icon></div>
 </template>
 
 <script lang="ts" setup>

@@ -7,5 +7,6 @@ import presetIcons from '@unocss/preset-icons'
 // ant-design
 export default defineConfig({
   presets: [presetAttributify(), presetUno(), presetIcons()],
-  transformers: [transformerDirectives()] // apply类似写法
+  transformers: [transformerDirectives()], // apply类似写法
+  shortcuts: [["icon", "inline-block w-1rem h-1rem align-middle text-current"]]
 })
