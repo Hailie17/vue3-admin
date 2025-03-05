@@ -9,10 +9,20 @@ const { iconName, customClass} = defineProps<{
 const svgClass = computed(() =>  {
   customClass ? `icon ${customClass}` : 'icon'
 })
+// 判断图标是否为外链
+const isExt = computed(() => isExternal(iconName))
+
+// 外部icon渲染方式
+const styleExternalIcon = computed(() => ({
+  mask:  `url(${iconName}) norepeat 50% 50%`,
+  "-webkit-mask": `url(${iconName}) norepeat 50% 50%`,
+  "mask-size": "cover"
+}))
 </script>
 
 <template>
-  <IconifyIcon :class="svgClass" :icon="iconName"></IconifyIcon>
+  <IconifyIcon :class="svgClass" :icon="iconName" v-if="!isExt"></IconifyIcon>
+  <div v-else :style="styleExternalIcon" class="svgClass" bg-current></div>
 </template>
 
 <style scoped>
