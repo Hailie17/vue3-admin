@@ -12,7 +12,7 @@ const svgClass = computed(() =>  {
 // 判断图标是否为外链
 const isExt = computed(() => isExternal(iconName))
 
-// 外部icon渲染方式
+// 通过mask渲染svg图标，兼容性不好，可以通过请求svg的方式来渲染
 const styleExternalIcon = computed(() => ({
   mask:  `url(${iconName}) norepeat 50% 50%`,
   "-webkit-mask": `url(${iconName}) norepeat 50% 50%`,
@@ -21,8 +21,8 @@ const styleExternalIcon = computed(() => ({
 </script>
 
 <template>
-  <IconifyIcon :class="svgClass" :icon="iconName" v-if="!isExt"></IconifyIcon>
-  <div v-else :style="styleExternalIcon" class="svgClass" bg-current></div>
+  <IconifyIcon :class="svgClass" :icon="iconName" v-if="!isExt" v-bind="$attrs"></IconifyIcon>
+  <div v-else :style="styleExternalIcon" class="svgClass" bg-current v-bind="$attrs"></div>
 </template>
 
 <style scoped>
