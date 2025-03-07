@@ -8,7 +8,7 @@ import {isExternal} from '@/utils/validate'
 import {Icon as IconifyIcon} from '@iconify/vue'
 const { iconName, customClass} = withDefaults(defineProps<{
   iconName: string,
-  customClass: string
+  customClass?l: string
 }>(),{
   customClass: ''
 })
@@ -25,7 +25,7 @@ const styleExternalIcon = computed(() => ({
   "-webkit-mask": `url(${iconName}) norepeat 50% 50%`,
   "mask-size": "cover"
 }))
-
+// 555
 // 在实现图标的时候，尽量使用svg，不要使用font字体--页面放大会出现锯齿，而且不圆润
 </script>
 
