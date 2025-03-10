@@ -8,10 +8,28 @@ import {isExternal} from '@/utils/validate'
 import {Icon as IconifyIcon} from '@iconify/vue'
 const { iconName, customClass} = withDefaults(defineProps<{
   iconName: string,
-  customClass?l: string
+  customClass?: string
 }>(),{
   customClass: ''
 })
+
+// 其他写法
+// defineProps<{iconName: string; customClass?: string}>() 
+
+// defineProps({
+//   iconName: {
+//     type: String
+//   },
+//   customClass: {
+//     type: String,
+//     default: ''
+//   }
+// })
+
+// const {customClass} = defineProps({
+//   customClass: Object as PropType<{a: 1, b:2}>
+// })
+
 // 组合自定义类名
 const svgClass = computed(() =>  {
   customClass ? `icon ${customClass}` : 'icon'
