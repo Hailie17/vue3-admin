@@ -6,15 +6,17 @@
 <script setup lang="ts">
 import {isExternal} from '@/utils/validate'
 import {Icon as IconifyIcon} from '@iconify/vue'
-const { iconName, customClass} = withDefaults(defineProps<{
-  iconName: string,
-  customClass?: string
-}>(),{
-  customClass: ''
-})
+
+// 丧失响应式
+// const { iconName, customClass} = withDefaults(defineProps<{
+//   iconName: string,
+//   customClass?: string
+// }>(),{
+//   customClass: ''
+// })
 
 // 其他写法
-// defineProps<{iconName: string; customClass?: string}>() 
+const {iconName, customClass} = defineProps<{iconName: string; customClass?: string}>() 
 
 // defineProps({
 //   iconName: {

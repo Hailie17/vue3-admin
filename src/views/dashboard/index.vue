@@ -13,7 +13,7 @@ const handle = () => {
   proxy?.$message('Hi My dear')
 }
 
-const val = ref('text-red-100')
+const val = ref('text-red')
 
 setTimeout(() => {
   val.value = 'text-blue-100'
