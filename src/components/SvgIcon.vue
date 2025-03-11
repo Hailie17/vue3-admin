@@ -1,6 +1,6 @@
 <template>
   <IconifyIcon :class="svgClass" :icon="iconName" v-if="!isExt" v-bind="$attrs"></IconifyIcon>
-  <div v-else :style="styleExternalIcon" class="svgClass" bg-current v-bind="$attrs"></div>
+  <div v-else :style="styleExternalIcon" :class="svgClass" bg-current v-bind="$attrs"></div>
 </template>
 
 <script setup lang="ts">
@@ -16,26 +16,25 @@ import {Icon as IconifyIcon} from '@iconify/vue'
 // })
 
 // 其他写法
-const {iconName, customClass} = defineProps<{iconName: string; customClass?: string}>() 
+// const {iconName, customClass} = defineProps<{iconName: string; customClass?: string}>() 
 
-// defineProps({
-//   iconName: {
-//     type: String
-//   },
-//   customClass: {
-//     type: String,
-//     default: ''
-//   }
-// })
+const { iconName, customClass } = defineProps({
+  iconName: {
+    type: String,
+    default: ''
+  },
+  customClass: {
+    type: String,
+    default: ''
+  }
+})
 
 // const {customClass} = defineProps({
 //   customClass: Object as PropType<{a: 1, b:2}>
 // })
 
 // 组合自定义类名
-const svgClass = computed(() =>  {
-  customClass ? `icon ${customClass}` : 'icon'
-})
+const svgClass = computed(() =>  (customClass ? `icon ${customClass}` : 'icon'))
 // 判断图标是否为外链
 const isExt = computed(() => isExternal(iconName))
 
