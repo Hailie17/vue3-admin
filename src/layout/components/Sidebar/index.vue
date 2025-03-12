@@ -1,1 +1,3 @@
-<template>侧边栏</template>
+<template>
+  <el-menu></el-menu>
+</template>
