@@ -4,5 +4,5 @@ interface IVariables {
   menuBg: string
 }
 
-export const varaibles: IVariables
-export default varaibles
+export const variables: IVariables
+export default variables
