@@ -1,5 +1,6 @@
 <template>
-  <el-menu router class="sidebar-container-menu" :default-active="defaultActive" :background-color="variables.menuBg" :text-color="variables.menuText" :active-text-color="variables.menuActiveText" :collapse="true">
+  <el-menu router class="sidebar-container-menu" :default-active="defaultActive" :background-color="variables.menuBg" :text-color="variables.menuText" :active-text-color="variables.menuActiveText" :collapse="collapse">
+    <el-button @click="collapse = !collapse"></el-button>
     <el-menu-item index="/dashboard">
       <el-icon><setting /></el-icon>
       <template #title>Navigator Four</template>
@@ -14,4 +15,6 @@
   const defaultActive = computed(() => {
     return route.path
   })
+
+  const collapse = ref(false)
 </script>
