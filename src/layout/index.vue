@@ -18,7 +18,9 @@
 .app-wrapper {
   @apply flex w-full h-full;
   .sidebar-container {
-    @apply bg-red w-[var(--sidebar-width)];
+    .sidebar-container-menu:not(.el-menu--collapse) {
+      @apply bg-red w-[var(--sidebar-width)];
+    }
   }
   .main-container {
     @apply flex flex-col flex-1;
