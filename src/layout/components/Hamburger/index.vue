@@ -1,10 +1,26 @@
 <template>
   <div class="hamburger-container">
-    <svg-icon icon-name="ant-design:bars-outlined" custom-class="hamburger"></svg-icon>
+    <svg-icon
+      icon-name="ant-design:bars-outlined"
+      custom-class="hamburger"
+      :class="{ 'rotate-180': collapse }"
+    ></svg-icon>
   </div>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+const { collapse } = defineProps({
+  collapse: {
+    type: Boolean,
+    default: false,
+  },
+})
+
+const emit = defineEmits<{ (e: 'toggleCollapse'): void }>()
+const handleClick = () => {
+  emit('toggleCollapse')
+}
+</script>
 
 <style lang="scss" scoped>
 .hamburger-container {
