@@ -4,6 +4,8 @@
   </div>
 </template>
 
+<script lang="ts" setup></script>
+
 <style lang="scss" scoped>
 .hamburger-container {
   @apply leading-[50px] float-left cursor-pointer px-10px hover:(bg-black/5);
