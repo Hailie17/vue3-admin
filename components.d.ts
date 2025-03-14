@@ -15,6 +15,7 @@ declare module 'vue' {
     Hamberger: typeof import('./src/layout/components/Hamberger/index.vue')['default']
     Hamburger: typeof import('./src/layout/components/Hamburger/index.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
+    Navbar: typeof import('./src/layout/components/Navbar.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     Sidebar: typeof import('./src/layout/components/Sidebar/index.vue')['default']

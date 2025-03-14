@@ -5,9 +5,7 @@
     </div>
     <div class="main-container">
       <div class="header">
-        <div class="navbar">
-          <hamburger></hamburger>
-        </div>
+        <navbar></navbar>
         <div class="tags-view">导航条2</div>
       </div>
       <div class="app-main">
@@ -42,3 +40,4 @@
   }
 }
 </style>
+
