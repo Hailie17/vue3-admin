@@ -1,6 +1,6 @@
 <template>
   <div class="navbar">
-    <hamburger @toggleCollaps="handleCollapse" :collapse="collapse"></hamburger>
+    <hamburger @toggleCollapse="handleCollapse" :collapse="collapse"></hamburger>
     <div></div>
   </div>
 </template>

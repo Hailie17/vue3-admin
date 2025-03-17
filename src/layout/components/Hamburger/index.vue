@@ -4,6 +4,7 @@
       icon-name="ant-design:bars-outlined"
       custom-class="hamburger"
       :class="{ 'rotate-180': collapse }"
+      @click="handleClick"
     ></svg-icon>
   </div>
 </template>
@@ -27,6 +28,6 @@ const handleClick = () => {
   @apply leading-[50px] float-left cursor-pointer px-10px hover:(bg-black/5);
 }
 .hamburger {
-  @apply h-30px w-30px;
+  @apply h-30px w-30px transition-transform duration-300;
 }
 </style>
