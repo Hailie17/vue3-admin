@@ -8,16 +8,14 @@
     :active-text-color="variables.menuActiveText"
     :collapse="sidebar.opened"
   >
-    <el-menu-item index="/dashboard">
-      <el-icon><setting /></el-icon>
-      <template #title>Navigator Four</template>
-    </el-menu-item>
+    <sidebar-item v-for="route in routes" :key="route.path" :item="route"></sidebar-item>
   </el-menu>
 </template>
 
 <script setup>
 import { useAppStore } from '@/stores/app'
 import variables from '@/style/variables.module.scss'
+import { routes } from '@/router'
 
 const route = useRoute()
 const defaultActive = computed(() => {
