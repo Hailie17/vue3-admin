@@ -8,7 +8,6 @@
     :active-text-color="variables.menuActiveText"
     :collapse="sidebar.opened"
   >
-    <el-button @click="collapse = !collapse"></el-button>
     <el-menu-item index="/dashboard">
       <el-icon><setting /></el-icon>
       <template #title>Navigator Four</template>
