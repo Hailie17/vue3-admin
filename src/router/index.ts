@@ -66,16 +66,28 @@ const asyncRoutes: RouteRecordRaw[] = [
         path: 'menu',
         name: 'menu',
         component: () => import('@/views/system/menu.vue'),
+        meta: {
+          icon: 'ant-design:unlock-filled',
+          title: 'menu',
+        },
       },
       {
         path: 'role',
         name: 'role',
         component: () => import('@/views/system/role.vue'),
+        meta: {
+          icon: 'ant-design:unlock-filled',
+          title: 'role',
+        },
       },
       {
         path: 'user',
         name: 'user',
         component: () => import('@/views/system/user.vue'),
+        meta: {
+          icon: 'ant-design:unlock-filled',
+          title: 'user',
+        },
       },
     ],
   },
