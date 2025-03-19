@@ -1,5 +1,12 @@
+:export {
+  menuText: #bfcbd9;
+  menuActiiveText: #409eff;
+  menuBg: #304156;
+}
+
 :root {
   --sidebar-width: 220px;
   --navBar-height: 50px;
   --tagsview-height: 34px;
+  --menu-bg: #304156;
 }

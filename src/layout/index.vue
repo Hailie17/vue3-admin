@@ -18,8 +18,9 @@
 .app-wrapper {
   @apply flex w-full h-full;
   .sidebar-container {
+    @apply bg-[var(--menu-bg)];
     .sidebar-container-menu:not(.el-menu--collapse) {
-      @apply bg-red w-[var(--sidebar-width)];
+      @apply w-[var(--sidebar-width)];
     }
   }
   .main-container {
@@ -40,4 +41,3 @@
   }
 }
 </style>
-
