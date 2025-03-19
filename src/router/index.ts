@@ -38,6 +38,13 @@ const asyncRoutes: RouteRecordRaw[] = [
     ],
   },
   {
+    path: '/XXX',
+    component: Layout, // 不需要动态加载，直接引入组件
+    meta: {
+      hidden: true,
+    },
+  },
+  {
     path: '/guide',
     component: Layout, // 不需要动态加载，直接引入组件
     redirect: '/guide/index',
@@ -87,6 +94,7 @@ const asyncRoutes: RouteRecordRaw[] = [
         meta: {
           icon: 'ant-design:unlock-filled',
           title: 'user',
+          hidden: true,
         },
       },
     ],

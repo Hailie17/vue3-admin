@@ -1,24 +1,26 @@
 <template>
-  <el-menu-item v-if="filteredChildren.length <= 1" :index="resolvePath(singleChildRoute.path)">
-    <el-icon v-if="iconName">
-      <svg-icon :icon-name="iconName" />
-    </el-icon>
-    <template #title>{{ singleChildRoute.meta?.title }}</template>
-  </el-menu-item>
-  <el-sub-menu v-else :index="item.path">
-    <template #title>
+  <template v-if="!item.meta?.hidden">
+    <el-menu-item v-if="filteredChildren.length <= 1" :index="resolvePath(singleChildRoute.path)">
       <el-icon v-if="iconName">
         <svg-icon :icon-name="iconName" />
       </el-icon>
-      <span>{{ singleChildRoute.meta?.title }}</span>
-    </template>
-    <sidebar-item
-      v-for="child of filteredChildren"
-      :base-path="basePath"
-      :key="child.path"
-      :item="child"
-    ></sidebar-item>
-  </el-sub-menu>
+      <template #title>{{ singleChildRoute.meta?.title }}</template>
+    </el-menu-item>
+    <el-sub-menu v-else :index="item.path">
+      <template #title>
+        <el-icon v-if="iconName">
+          <svg-icon :icon-name="iconName" />
+        </el-icon>
+        <span>{{ singleChildRoute.meta?.title }}</span>
+      </template>
+      <sidebar-item
+        v-for="child of filteredChildren"
+        :base-path="basePath"
+        :key="child.path"
+        :item="child"
+      ></sidebar-item>
+    </el-sub-menu>
+  </template>
 </template>
 <script lang="ts" setup>
 import type { RouteRecordRaw } from 'vue-router'
