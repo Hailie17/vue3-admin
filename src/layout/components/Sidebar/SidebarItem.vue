@@ -29,7 +29,7 @@ const { item, basePath } = defineProps<{ item: RouteRecordRaw; basePath: string 
 // 根据路由配置循环
 // 如果只有一个子菜单，直接渲染这个子菜单即可
 // 如果有多个子菜单，使用el-submenu去渲染
-const filteredChildren = computed(() => item.children || [])
+const filteredChildren = computed(() => (item.children || []).filter((child) => !child.meta?.hidden))
 
 // 要渲染的路由
 const singleChildRoute = computed(() => (filteredChildren.value.length === 1 ? filteredChildren.value[0] : item))

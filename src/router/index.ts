@@ -76,6 +76,7 @@ const asyncRoutes: RouteRecordRaw[] = [
         meta: {
           icon: 'ant-design:unlock-filled',
           title: 'menu',
+          hidden: true,
         },
       },
       {
@@ -85,6 +86,7 @@ const asyncRoutes: RouteRecordRaw[] = [
         meta: {
           icon: 'ant-design:unlock-filled',
           title: 'role',
+          hidden: true,
         },
       },
       {
