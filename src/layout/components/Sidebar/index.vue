@@ -8,7 +8,8 @@
     :active-text-color="variables.menuActiveText"
     :collapse="sidebar.opened"
   >
-    <sidebar-item v-for="route in routes" :key="route.path" :item="route"></sidebar-item>
+    <sidebar-item v-for="route in routes" :key="route.path" :item="route" :base-path="route.path"></sidebar-item>
+    <!-- 增加父路径，用于el-menu-item渲染时拼接 -->
   </el-menu>
 </template>
 
