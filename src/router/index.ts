@@ -19,7 +19,7 @@ const constantRoutes: RouteRecordRaw[] = [
     ],
   },
   {
-    path: 'external-link', //外部链接
+    path: '/external-link', //外部链接
     component: Layout,
     children: [
       {
@@ -90,7 +90,7 @@ const asyncRoutes: RouteRecordRaw[] = [
         meta: {
           icon: 'ant-design:unlock-filled',
           title: 'menu',
-          hidden: true,
+          hidden: false,
         },
       },
       {
@@ -100,7 +100,7 @@ const asyncRoutes: RouteRecordRaw[] = [
         meta: {
           icon: 'ant-design:unlock-filled',
           title: 'role',
-          hidden: true,
+          hidden: false,
         },
       },
       {
@@ -110,7 +110,7 @@ const asyncRoutes: RouteRecordRaw[] = [
         meta: {
           icon: 'ant-design:unlock-filled',
           title: 'user',
-          hidden: true,
+          hidden: false,
         },
       },
     ],

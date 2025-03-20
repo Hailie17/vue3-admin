@@ -1,10 +1,13 @@
 <template>
-  <component :is="componentType" v-bind="componentProps"></component>
+  <component :is="componentType" v-bind="componentProps">
+    <slot></slot>
+  </component>
 </template>
 
 <script lang="ts" setup>
 import { isExternal } from '@/utils/validate'
 const { to } = defineProps<{ to: string }>()
+console.log(to, 'to')
 
 const componentType = computed(() => {
   return isExternal(to) ? 'a' : 'router-link'

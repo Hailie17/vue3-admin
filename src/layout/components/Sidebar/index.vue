@@ -1,6 +1,5 @@
 <template>
   <el-menu
-    router
     border-none
     class="sidebar-container-menu"
     :default-active="defaultActive"
