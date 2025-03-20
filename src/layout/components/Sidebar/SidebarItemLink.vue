@@ -1,5 +1,5 @@
 <template>
-  <component :is="componentType"></component>
+  <component :is="componentType" v-bind="componentProps"></component>
 </template>
 
 <script lang="ts" setup>
@@ -8,5 +8,18 @@ const { to } = defineProps<{ to: string }>()
 
 const componentType = computed(() => {
   return isExternal(to) ? 'a' : 'router-link'
+})
+
+const componentProps = computed(() => {
+  if (isExternal(to)) {
+    return {
+      href: to,
+      target: '_blank',
+    }
+  } else {
+    return {
+      to,
+    }
+  }
 })
 </script>
