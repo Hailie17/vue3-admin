@@ -18,6 +18,20 @@ const constantRoutes: RouteRecordRaw[] = [
       },
     ],
   },
+  {
+    path: 'external-link', //外部链接
+    component: Layout,
+    children: [
+      {
+        path: 'http://www.baidu.com',
+        redirect: '/',
+        meta: {
+          icon: 'ant-design:link-outlined',
+          title: 'external-link',
+        },
+      },
+    ],
+  },
 ]
 
 const asyncRoutes: RouteRecordRaw[] = [
