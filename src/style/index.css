@@ -10,3 +10,7 @@
   --tagsview-height: 34px;
   --menu-bg: #304156;
 }
+
+a {
+  @apply decoration-none active:(decoration-none) hover:(decoration-none);
+}

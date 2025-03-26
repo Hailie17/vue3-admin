@@ -27,7 +27,7 @@ const constantRoutes: RouteRecordRaw[] = [
         redirect: '/',
         meta: {
           icon: 'ant-design:link-outlined',
-          title: 'external-link',
+          title: 'external-baidu',
         },
       },
     ],
@@ -81,6 +81,7 @@ const asyncRoutes: RouteRecordRaw[] = [
     meta: {
       icon: 'ant-design:unlock-filled',
       title: 'system',
+      alwaysShow: true, // 作为父文件夹一直显示
     },
     children: [
       {
@@ -100,7 +101,7 @@ const asyncRoutes: RouteRecordRaw[] = [
         meta: {
           icon: 'ant-design:unlock-filled',
           title: 'role',
-          hidden: false,
+          hidden: true,
         },
       },
       {
@@ -110,7 +111,7 @@ const asyncRoutes: RouteRecordRaw[] = [
         meta: {
           icon: 'ant-design:unlock-filled',
           title: 'user',
-          hidden: false,
+          hidden: true,
         },
       },
     ],
