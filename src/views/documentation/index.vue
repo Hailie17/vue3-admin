@@ -1,1 +1,3 @@
-<template>documentation</template>
+<template>
+  <div>documentation</div>
+</template>

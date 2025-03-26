@@ -1,1 +1,3 @@
-<template>guide</template>
+<template>
+  <div>guide</div>
+</template>

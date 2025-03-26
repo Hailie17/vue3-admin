@@ -1,15 +1,27 @@
 <template>
   <div class="app-main">
-    <router-view v-slot="component">
-      <keep-alive>
-        <component :is="component"></component>
-      </keep-alive>
+    <router-view v-slot="{ Component }">
+      <transition name="fade">
+        <keep-alive>
+          <component :is="Component" :key="$route.path"></component>
+        </keep-alive>
+      </transition>
     </router-view>
   </div>
 </template>
 <style lang="scss">
 .app-main {
-  @apply bg-cyan;
+  @apply bg-cyan overflow-hidden pos-absolute;
   min-height: calc(100vh - var(--tagsview-height) - var(--navbar-height));
+}
+.fade-enter-active,
+.fade-leave-active {
+  @apply transition-all duration-500 pos-absolute;
+}
+.fade-enter-from {
+  @apply opacity: 0 translate-x-[50px];
+}
+.fade-enter-to {
+  @apply opacity: 0 translate-x-[-50px];
 }
 </style>

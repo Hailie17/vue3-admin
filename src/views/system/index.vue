@@ -1,1 +1,3 @@
-<template>system</template>
+<template>
+  <div>system</div>
+</template>
