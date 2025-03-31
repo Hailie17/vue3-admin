@@ -1,8 +1,9 @@
 <template>
   <el-breadcrumb separator="/" leading-50px text-lg ml-30px inline-block>
-    <el-breadcrumb-item v-for="(a, index) in list" :to="{ path: a.path }">
-      <span v-if="index === list.length - 1">{{ a.meta?.title }}</span>
-      <a v-else>{{ a.meta?.title }}</a>
+    <!-- a.path 可能是路由参数导航 /test/index/:id -->
+    <el-breadcrumb-item v-for="(route, index) in list">
+      <span v-if="index === list.length - 1">{{ route.meta?.title }}</span>
+      <a v-else @click="handleLink(route)">{{ route.meta?.title }}</a>
     </el-breadcrumb-item>
   </el-breadcrumb>
 </template>
@@ -29,4 +30,14 @@ const getBreadCrumb = () => {
 }
 
 watch(() => route.path, getBreadCrumb, { immediate: true })
+
+function compile(path: string) {
+  const params = route.params
+}
+
+function handleLink(route: Partial<RouteLocationMatched>[]) {
+  const { path } = route
+  const link = compile(path)
+  route.push(link)
+}
 </script>

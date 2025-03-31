@@ -52,6 +52,21 @@ const asyncRoutes: RouteRecordRaw[] = [
     ],
   },
   {
+    path: '/test',
+    component: Layout, // 不需要动态加载，直接引入组件
+    children: [
+      {
+        path: 'index/:id',
+        name: 'test',
+        component: () => import('@/views/test/index.vue'),
+        meta: {
+          icon: 'ant-design:database-filled',
+          title: 'test',
+        },
+      },
+    ],
+  },
+  {
     path: '/XXX',
     component: Layout, // 不需要动态加载，直接引入组件
     meta: {
