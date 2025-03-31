@@ -1,6 +1,6 @@
 <template>
   <el-breadcrumb separator="/" leading-50px text-lg ml-30px inline-block>
-    <el-breadcrumb-item v-for="(a, index) in list" :to="a.path">
+    <el-breadcrumb-item v-for="(a, index) in list" :to="{ path: a.path }">
       <span v-if="index === list.length - 1">{{ a.meta?.title }}</span>
       <a v-else>{{ a.meta?.title }}</a>
     </el-breadcrumb-item>
@@ -25,7 +25,7 @@ const getBreadCrumb = () => {
       ...matched,
     ]
   }
-  list.value = matched
+  list.value = matched.filter((match) => match.meta?.breadcrumb !== false)
 }
 
 watch(() => route.path, getBreadCrumb, { immediate: true })

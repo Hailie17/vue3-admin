@@ -101,7 +101,8 @@ const asyncRoutes: RouteRecordRaw[] = [
         meta: {
           icon: 'ant-design:unlock-filled',
           title: 'role',
-          hidden: true,
+          hidden: false,
+          breadcrumb: false,
         },
       },
       {
