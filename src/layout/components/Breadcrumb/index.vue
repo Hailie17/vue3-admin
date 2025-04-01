@@ -9,7 +9,9 @@
 </template>
 
 <script lang="ts" setup>
+import router from '@/router'
 import { type RouteLocationMatched } from 'vue-router'
+import { compile } from 'path-to-regexp'
 const route = useRoute()
 const list = ref<Partial<RouteLocationMatched>[]>([])
 
@@ -31,13 +33,19 @@ const getBreadCrumb = () => {
 
 watch(() => route.path, getBreadCrumb, { immediate: true })
 
-function compile(path: string) {
+// 需要根据面包屑导航 + 当前访问路径 = 跳转路径
+function compilePath(path: string) {
   const params = route.params
+  const resultPath = compile(path)(params)
+  return resultPath
 }
 
 function handleLink(route: Partial<RouteLocationMatched>[]) {
-  const { path } = route
-  const link = compile(path)
-  route.push(link)
+  const { path, redirect } = route
+
+  if (redirect) {
+    return router.push(redirect as string)
+  }
+  router.push(compilePath(path!))
 }
 </script>
