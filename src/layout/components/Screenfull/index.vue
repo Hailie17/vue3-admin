@@ -6,8 +6,33 @@
   ></svg-icon>
 </template>
 <script lang="ts" setup>
+import screenfull from 'screenfull'
 const isFullScreen = ref(false)
+const { proxy } = getCurrentInstance()!
+
 function handleClick() {
-  isFullScreen.value = !isFullScreen.value
+  if (screenfull.isEnabled) {
+    screenfull.toggle()
+  } else {
+    proxy!.$message('浏览器不支持全屏')
+  }
 }
+
+function updateFullscreenStatus() {
+  // 看是否全屏，全屏就切换状态
+  isFullScreen.value = screenfull.isFullScreen
+}
+
+onMounted(() => {
+  if (screenfull.isEnabled) {
+    screenfull.on('change', updateFullscreenStatus)
+  }
+})
+
+// 卸载
+onBeforeUnmount(() => {
+  if (screenfull.isEnabled) {
+    screenfull.off('change', updateFullscreenStatus)
+  }
+})
 </script>
