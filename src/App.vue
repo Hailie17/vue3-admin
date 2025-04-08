@@ -1,12 +1,12 @@
-<script setup lang="ts">
-//  5555
-</script>
-
 <template>
- 
-  <router-view></router-view>
+  <el-config-provider :size="store.size">
+    <router-view></router-view>
+  </el-config-provider>
 </template>
 
-<style scoped>
+<script setup lang="ts">
+import { useAppStore } from '@/stores/app'
+const store = useAppStore()
+</script>
 
-</style>
+<style scoped></style>
