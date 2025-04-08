@@ -5,12 +5,15 @@
     </span>
     <template #dropdown>
       <el-dropdown-menu>
-        <el-dropdown-item v-for="item in sizeOptions" :key="item">{{ item.label }}</el-dropdown-item>
+        <el-dropdown-item :disabled="item.value === size" v-for="item in sizeOptions" :key="item">{{
+          item.label
+        }}</el-dropdown-item>
       </el-dropdown-menu>
     </template>
   </el-dropdown>
 </template>
 <script lang="ts" setup>
+const size = ref('default')
 const sizeOptions = ref([
   {
     label: 'Default',
