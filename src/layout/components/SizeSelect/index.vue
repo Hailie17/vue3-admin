@@ -5,10 +5,24 @@
     </span>
     <template #dropdown>
       <el-dropdown-menu>
-        <el-dropdown-item>Action 1</el-dropdown-item>
-        <el-dropdown-item>Action 2</el-dropdown-item>
-        <el-dropdown-item>Action 3</el-dropdown-item>
+        <el-dropdown-item v-for="item in sizeOptions" :key="item">{{ item.label }}</el-dropdown-item>
       </el-dropdown-menu>
     </template>
   </el-dropdown>
 </template>
+<script lang="ts" setup>
+const sizeOptions = ref([
+  {
+    label: 'Default',
+    value: 'default',
+  },
+  {
+    label: 'Large',
+    value: 'large',
+  },
+  {
+    label: 'Small',
+    value: 'small',
+  },
+])
+</script>

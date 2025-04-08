@@ -20,7 +20,8 @@ function handleClick() {
 
 function updateFullscreenStatus() {
   // 看是否全屏，全屏就切换状态
-  isFullScreen.value = screenfull.isFullScreen
+
+  isFullScreen.value = screenfull.isFullscreen
 }
 
 onMounted(() => {
