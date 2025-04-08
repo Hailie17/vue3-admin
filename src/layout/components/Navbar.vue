@@ -2,11 +2,12 @@
   <div class="navbar" flex>
     <hamburger @toggleCollapse="toggleSidebar" :collapse="sidebar.opened"></hamburger>
     <breadcrumb></breadcrumb>
-    <div flex justify-end flex-1 items-center mr-59px>
+    <div flex justify-end flex-1 items-center mr-20px>
       <screenfull mx-5px></screenfull>
       <el-tooltip content="ChangeSize" placement="bottom">
         <size-select></size-select>
       </el-tooltip>
+      <avator></avator>
     </div>
   </div>
 </template>
