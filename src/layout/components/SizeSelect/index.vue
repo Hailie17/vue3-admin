@@ -6,8 +6,8 @@
     <template #dropdown>
       <el-dropdown-menu>
         <el-dropdown-item
-          @click="handleClick(item.value as Size)"
-          :disabled="item.value === size"
+          @click="store.setSize(item.value as Size)"
+          :disabled="item.value === store.size"
           v-for="item in sizeOptions"
           :key="item"
           >{{ item.label }}</el-dropdown-item
@@ -18,7 +18,8 @@
 </template>
 <script lang="ts" setup>
 import type { Size } from '@/plugins/element'
-const size = ref<Size>('default')
+import { useAppStore } from '@/stores/app'
+const store = useAppStore()
 const sizeOptions = ref([
   {
     label: 'Default',
@@ -33,7 +34,4 @@ const sizeOptions = ref([
     value: 'small',
   },
 ])
-const handleClick = (s: Size) => {
-  size.value = s
-}
 </script>
