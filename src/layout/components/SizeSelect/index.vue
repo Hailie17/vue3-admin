@@ -5,15 +5,20 @@
     </span>
     <template #dropdown>
       <el-dropdown-menu>
-        <el-dropdown-item :disabled="item.value === size" v-for="item in sizeOptions" :key="item">{{
-          item.label
-        }}</el-dropdown-item>
+        <el-dropdown-item
+          @click="handleClick(item.value as Size)"
+          :disabled="item.value === size"
+          v-for="item in sizeOptions"
+          :key="item"
+          >{{ item.label }}</el-dropdown-item
+        >
       </el-dropdown-menu>
     </template>
   </el-dropdown>
 </template>
 <script lang="ts" setup>
-const size = ref('default')
+import type { Size } from '@/plugins/element'
+const size = ref<Size>('default')
 const sizeOptions = ref([
   {
     label: 'Default',
@@ -28,4 +33,7 @@ const sizeOptions = ref([
     value: 'small',
   },
 ])
+const handleClick = (s: Size) => {
+  size.value = s
+}
 </script>
