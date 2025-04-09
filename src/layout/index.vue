@@ -5,13 +5,16 @@
     </div>
     <div class="main-container">
       <div class="header">
+        <!-- 导航条 -->
         <navbar></navbar>
         <div class="tags-view">导航条2</div>
       </div>
+      <!-- 核心渲染部分 -->
       <div class="app-main">
         <router-view></router-view>
       </div>
     </div>
+    <!-- 增加抽屉组件，根据navbar内容切换 -->
   </div>
 </template>
 <style lang="scss" scoped>

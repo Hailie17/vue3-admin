@@ -7,6 +7,7 @@
       <el-tooltip content="ChangeSize" placement="bottom">
         <size-select></size-select>
       </el-tooltip>
+      <svg-icon icon-name="ant-design:setting-outlined" size-2em></svg-icon>
       <avator></avator>
     </div>
   </div>
