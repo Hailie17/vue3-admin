@@ -14,6 +14,7 @@ declare module 'vue' {
     ElBreadcrumb: typeof import('element-plus/es')['ElBreadcrumb']
     ElBreadcrumbItem: typeof import('element-plus/es')['ElBreadcrumbItem']
     ElButton: typeof import('element-plus/es')['ElButton']
+    ElColorPicker: typeof import('element-plus/es')['ElColorPicker']
     ElConfigProvider: typeof import('element-plus/es')['ElConfigProvider']
     ElDrawer: typeof import('element-plus/es')['ElDrawer']
     ElDropdown: typeof import('element-plus/es')['ElDropdown']
@@ -32,10 +33,12 @@ declare module 'vue' {
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     Screenfull: typeof import('./src/layout/components/Screenfull/index.vue')['default']
+    Settings: typeof import('./src/layout/components/Settings/index.vue')['default']
     Sidebar: typeof import('./src/layout/components/Sidebar/index.vue')['default']
     SidebarItem: typeof import('./src/layout/components/Sidebar/SidebarItem.vue')['default']
     SidebarItemLink: typeof import('./src/layout/components/Sidebar/SidebarItemLink.vue')['default']
     SizeSelect: typeof import('./src/layout/components/SizeSelect/index.vue')['default']
     SvgIcon: typeof import('./src/components/SvgIcon.vue')['default']
+    ThemePicker: typeof import('./src/layout/components/ThemePicker/index.vue')['default']
   }
 }
