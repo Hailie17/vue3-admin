@@ -15,7 +15,9 @@
       </div>
     </div>
     <!-- 增加抽屉组件，根据navbar内容切换 -->
-    <right-panel v-model="setting" title="设置主题色"></right-panel>
+    <right-panel v-model="setting" title="设置主题色">
+      <!-- 设置功能 -->
+    </right-panel>
   </div>
 </template>
 
