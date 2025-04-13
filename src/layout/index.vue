@@ -6,7 +6,7 @@
     <div class="main-container">
       <div class="header">
         <!-- 导航条 -->
-        <navbar></navbar>
+        <navbar @showSettings="openSetting"></navbar>
         <div class="tags-view">导航条2</div>
       </div>
       <!-- 核心渲染部分 -->
@@ -17,6 +17,14 @@
     <!-- 增加抽屉组件，根据navbar内容切换 -->
   </div>
 </template>
+
+<script lang="ts" setup>
+const setting = ref(false)
+const openSetting = () => {
+  setting.value = true
+}
+</script>
+
 <style lang="scss" scoped>
 .app-wrapper {
   @apply flex w-full h-full;
