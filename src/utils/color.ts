@@ -11,5 +11,5 @@ const generateColors = (primary: string) => {
 }
 
 const setColors = (colors: Record<string,string>) => {
-  
+  // 111
 }
