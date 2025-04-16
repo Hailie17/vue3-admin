@@ -1,6 +1,7 @@
 // 对color做生产，设置
 import cssFunc from 'css-color-function'
 
+// 生成颜色
 const formula: { [prop: string]: string } = {
   'primary-light-1': 'color(xxx tint(10%))',
   'primary-light-2': 'color(xxx tint(20%))',
@@ -13,6 +14,7 @@ const formula: { [prop: string]: string } = {
   'primary-light-9': 'color(xxx tint(90%))',
 }
 
+// 生成颜色
 const generateColors = (primary: string) => {
   const colors: Record<string, string> = {}
   Object.values(formula).forEach((key) => {
@@ -22,6 +24,7 @@ const generateColors = (primary: string) => {
   return colors
 }
 
+// 设置颜色
 const setColors = (colors: Record<string, string>) => {
   const el = document.documentElement
   Object.entries(colors).forEach(([key, value]) => {
