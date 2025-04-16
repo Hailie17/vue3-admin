@@ -1,5 +1,5 @@
 import { useSettingStore } from '@/stores/setting'
-import { generateColors } from '@/utils/color'
+import { generateColors, setColors } from '@/utils/color'
 
 export const useGenerateTheme = () => {
   // 监控主题变化，更新到store
@@ -11,7 +11,13 @@ export const useGenerateTheme = () => {
   const originalTheme = computed(() => store.settings.originalTheme)
   watchEffect(() => {
     if (theme.value !== originalTheme.value) {
-      generateColors(theme.value)
+      const colors = {
+        primary: theme.value, // primary
+        ...generateColors(theme.value), // primary-light-1*9
+      }
+      setColors(colors)
+      store.changeSetting({ key: 'originalTheme', value: theme.value })
     }
   })
+  // 目的是生成主体应用在根元素上
 }

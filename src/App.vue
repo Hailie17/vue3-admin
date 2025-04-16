@@ -6,7 +6,9 @@
 
 <script setup lang="ts">
 import { useAppStore } from '@/stores/app'
+import { useGenerateTheme } from './hooks/useGenerateTheme'
 const store = useAppStore()
+useGenerateTheme() // watch主题
 </script>
 
 <style scoped></style>

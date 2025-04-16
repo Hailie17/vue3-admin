@@ -1,6 +1,6 @@
 <!-- 右侧setting抽屉组件 -->
 <template>
-  <el-drawer :model-value="modelValue" :direction="direction" :title="title" @cloce="handelClose">
+  <el-drawer :model-value="modelValue" :direction="direction" :title="title" @close="handelClose">
     <slot></slot>
   </el-drawer>
 </template>

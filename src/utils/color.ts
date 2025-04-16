@@ -17,8 +17,8 @@ const formula: { [prop: string]: string } = {
 // 生成颜色
 const generateColors = (primary: string) => {
   const colors: Record<string, string> = {}
-  Object.values(formula).forEach((key) => {
-    const value = formula[key].replace(/xxx/g, primary)
+  Object.entries(formula).forEach(([key, v]) => {
+    const value = v.replace(/xxx/g, primary)
     colors[key] = cssFunc.convert(value)
   })
   return colors

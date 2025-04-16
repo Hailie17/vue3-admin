@@ -7,7 +7,6 @@
 <script lang="ts" setup>
 import { isExternal } from '@/utils/validate'
 const { to } = defineProps<{ to: string }>()
-console.log(to, 'to')
 
 const componentType = computed(() => {
   return isExternal(to) ? 'a' : 'router-link'
