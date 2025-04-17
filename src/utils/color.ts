@@ -27,8 +27,10 @@ const generateColors = (primary: string) => {
 // 设置颜色
 const setColors = (colors: Record<string, string>) => {
   const el = document.documentElement
+
   Object.entries(colors).forEach(([key, value]) => {
     el.style.setProperty(`--el-color-${key}`, value)
+    console.log(el, 11)
   })
 }
 
