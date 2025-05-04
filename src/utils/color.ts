@@ -30,7 +30,6 @@ const setColors = (colors: Record<string, string>) => {
 
   Object.entries(colors).forEach(([key, value]) => {
     el.style.setProperty(`--el-color-${key}`, value)
-    console.log(el, 11)
   })
 }
 

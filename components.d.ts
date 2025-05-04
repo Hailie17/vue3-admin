@@ -39,6 +39,7 @@ declare module 'vue' {
     SidebarItemLink: typeof import('./src/layout/components/Sidebar/SidebarItemLink.vue')['default']
     SizeSelect: typeof import('./src/layout/components/SizeSelect/index.vue')['default']
     SvgIcon: typeof import('./src/components/SvgIcon.vue')['default']
+    TagsView: typeof import('./src/layout/components/TagsView/index.vue')['default']
     ThemePicker: typeof import('./src/layout/components/ThemePicker/index.vue')['default']
   }
 }

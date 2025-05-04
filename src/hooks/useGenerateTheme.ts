@@ -16,6 +16,7 @@ export const useGenerateTheme = () => {
         ...generateColors(theme.value), // primary-light-1*9
       }
       setColors(colors)
+
       store.changeSetting({ key: 'originalTheme', value: theme.value })
     }
   })

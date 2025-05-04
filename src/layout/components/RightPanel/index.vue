@@ -10,10 +10,12 @@ import type { DrawerProps } from 'element-plus'
 import { type PropType } from 'vue'
 
 defineProps({
+  // 是否显示
   modelValue: {
     type: Boolean,
     default: false,
   },
+  // 抽屉方向
   direction: {
     type: String as PropType<DrawerProps['direction']>,
     default: 'rtl',
