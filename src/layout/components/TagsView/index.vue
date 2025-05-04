@@ -1,3 +1,30 @@
+<template>
+  <div class="tags-view-container">
+    <el-scrollvar w-full whitespace-nowrap>
+      <router-link
+        class="tags-view-item"
+        v-for="(tag, index) in visitedViews"
+        :class="{ active: isActive(tag) }"
+        :key="index"
+        :to="{ path: tag.path, query: tag.query }"
+      >
+        <el-dropdown
+          palcement="top-start"
+          trigger="contextmenu"
+          @command="(command) => handleCommand(handleCommand, tag)"
+        >
+          <span leading-28px>{{ (tag as any).title }}</span>
+          <template #dropdown>
+            <el-dropdown-menu>
+              <el-dropdown-item command="all">关闭所有</el-dropdown-item>
+            </el-dropdown-menu>
+          </template>
+        </el-dropdown>
+      </router-link>
+    </el-scrollvar>
+  </div>
+</template>
+
 <script lang="ts" setup>
 import { useTagsView } from '@/stores/tagsView'
 import { RouteLocationNormalizedGeneric, RouteRecordRaw } from 'vue-router'
@@ -56,6 +83,33 @@ function filterAffix(routes: RouteRecordRaw[], basePath = '/') {
     if (route.children) {
       tags.push(...filterAffix(route.children, route.path))
     }
+  }
+}
+
+// 页面加载后 需要初始化固定 + 默认当前路径的
+onMounted(() => {
+  initTags()
+})
+// 路径变化时重新添加
+watch(() => route.path, addTags)
+// 点击菜单
+const enum CommandType {
+  All = 'all',
+  Other = 'other',
+  Self = 'self',
+  Refresh = 'refresh'
+}
+const handleCommand = {
+  command: CommandType,
+  view: RouteLocationNormalizedGeneric
+} => {
+  switch (command) {
+    case value:
+
+      break;
+
+    default:
+      break;
   }
 }
 </script>
