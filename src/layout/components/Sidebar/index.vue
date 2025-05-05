@@ -5,7 +5,7 @@
     :default-active="defaultActive"
     :background-color="variables.menuBg"
     :text-color="variables.menuText"
-    :active-text-color="variables.menuActiveText"
+    :active-text-color="theme"
     :collapse="sidebar.opened"
   >
     <sidebar-item v-for="route in routes" :key="route.path" :item="route" :base-path="route.path"></sidebar-item>
@@ -25,4 +25,7 @@ const defaultActive = computed(() => {
 
 const { sidebar } = useAppStore()
 // const collapse = ref(false)
+
+const settingsStore = useSettingStore()
+const theme = computed(() => settingsStore.settings.theme)
 </script>

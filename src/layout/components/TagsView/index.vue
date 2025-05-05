@@ -7,6 +7,7 @@
         :class="{ active: isActive(tag) }"
         :key="index"
         :to="{ path: tag.path, query: tag.query }"
+        :style="{ backgroundColor: isActive(tag) ? theme : '', borderColor: isActive(tag) ? theme : '' }"
       >
         <el-dropdown
           palcement="top-start"
@@ -112,4 +113,6 @@ const handleCommand = {
       break;
   }
 }
+const settingsStore = useSettingStore()
+const theme = computed(() => settingsStore.settings.theme)
 </script>
