@@ -105,11 +105,19 @@ const handleCommand = {
   view: RouteLocationNormalizedGeneric
 } => {
   switch (command) {
-    case value:
-
+    case CommandType.Other:
+      deleteOtherView(view)
+      if(!isActive(view)){
+        router.push(view.path)
+      }
       break;
-
-    default:
+    case CommandType.Self:
+      closeSelectedTag(view)
+      break
+    case CommandType.Refresh:
+      // 跳转到专门做刷新的路由，再通过这个路由回来即可
+      deleteCacheView(view)
+      router.push('/redirect' + view.path)
       break;
   }
 }
