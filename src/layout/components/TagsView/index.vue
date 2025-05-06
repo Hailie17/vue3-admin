@@ -116,3 +116,19 @@ const handleCommand = {
 const settingsStore = useSettingStore()
 const theme = computed(() => settingsStore.settings.theme)
 </script>
+
+<style scoped>
+.tags-view-container {
+  @apply w-full overflow-hidden @apply h-[var(--tagsview-height)] shadow-sm shadow-gray-300;
+}
+.tags-view-item {
+  @apply inline-block h-28px leading-28px border-solid border-gray px-3px box-border;
+  &.active {
+    @apply text-white border-none;
+    &::before {
+      content: '';
+      @apply inline-block w-8px h-8px rounded-full bg-white mr-3px;
+    }
+  }
+}
+</style>
