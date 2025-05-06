@@ -27,6 +27,7 @@
 </template>
 
 <script lang="ts" setup>
+import { useSettingStore } from '@/stores/setting'
 import { useTagsView } from '@/stores/tagsView'
 import { RouteLocationNormalizedGeneric, RouteRecordRaw } from 'vue-router'
 import { join } from 'path-browserify'

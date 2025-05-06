@@ -7,6 +7,7 @@
       <div class="header">
         <!-- 导航条 -->
         <navbar @showSettings="openSetting"></navbar>
+        <tags-view v-if="isShowTagsView"></tags-view>
         <div class="tags-view">导航条2</div>
       </div>
       <!-- 核心渲染部分 -->
@@ -23,10 +24,15 @@
 </template>
 
 <script lang="ts" setup>
+import { useSettingStore } from '@/stores/setting'
+
 const setting = ref(false)
 const openSetting = () => {
   setting.value = true
 }
+
+const settingsStore = useSettingStore()
+const isShowTagsView = computed(() => settingsStore.settings.tagsView)
 </script>
 
 <style lang="scss" scoped>
