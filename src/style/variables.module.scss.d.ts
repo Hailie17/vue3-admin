@@ -3,6 +3,8 @@ interface IVariables {
   menuActiveText: string
   menuBg: string
   theme: string
+  navBarHeight: string
+  tagsViewHeight: string
 }
 
 export const variables: IVariables

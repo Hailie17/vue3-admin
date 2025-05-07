@@ -25,6 +25,7 @@
 
 <script lang="ts" setup>
 import { useSettingStore } from '@/stores/setting'
+import variables from '@/style/variables.module.scss'
 
 const setting = ref(false)
 const openSetting = () => {
@@ -33,6 +34,14 @@ const openSetting = () => {
 
 const settingsStore = useSettingStore()
 const isShowTagsView = computed(() => settingsStore.settings.tagsView)
+
+const outerHeight = computed(() => {
+  return (
+    (isShowTagsView.value
+      ? parseInt(variables.navBarHeight) + parseInt(variables.tagsViewHeight)
+      : parseInt(variables.navBarHeight)) + 'px'
+  )
+})
 </script>
 
 <style lang="scss" scoped>
@@ -58,7 +67,7 @@ const isShowTagsView = computed(() => settingsStore.settings.tagsView)
   }
   .app-main {
     @apply bg-cyan;
-    min-height: calc(100vh - var(--navBar-height) - var(--tagsview-height));
+    min-height: calc(100vh - v-bind(outerHeight));
   }
 }
 </style>
