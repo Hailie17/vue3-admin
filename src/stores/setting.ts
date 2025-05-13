@@ -21,7 +21,7 @@ export const useSettingStore = defineStore(
     // 持久化保存
     persist: {
       storage: sessionStorage,
-      pick: ['settings.theme'],
+      pick: ['settings.theme', 'settings.tagsView'],
     },
   }
 )
