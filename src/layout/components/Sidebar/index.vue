@@ -1,4 +1,5 @@
 <template>
+  <sidebar-logo></sidebar-logo>
   <el-menu
     border-none
     class="sidebar-container-menu"

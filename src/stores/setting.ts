@@ -10,6 +10,7 @@ export const useSettingStore = defineStore(
       originalTheme: '',
       t: true,
       tagsView: false,
+      sidebarLogo: false,
     })
     type ISetting = typeof settings
     const changeSetting = <T extends keyof ISetting>({ key, value }: { key: T; value: ISetting[T] }) => {
