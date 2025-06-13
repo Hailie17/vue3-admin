@@ -1,5 +1,5 @@
 <template>
-  <sidebar-logo></sidebar-logo>
+  <sidebar-logo v-if="sidebarLogo" :collapse="sidebar.opened"></sidebar-logo>
   <el-menu
     border-none
     class="sidebar-container-menu"
@@ -29,4 +29,5 @@ const { sidebar } = useAppStore()
 
 const settingsStore = useSettingStore()
 const theme = computed(() => settingsStore.settings.theme)
+const sidebarLogo = computed(() => settingsStore.settings.sidebarLogo)
 </script>
