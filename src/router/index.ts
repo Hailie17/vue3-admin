@@ -32,6 +32,14 @@ const constantRoutes: RouteRecordRaw[] = [
       },
     ],
   },
+  {
+    path: '/login',
+    name: 'Login',
+    component: () => import('@/views/login/index.vue'),
+    meta: {
+      hidden: true,
+    },
+  },
 ]
 
 const asyncRoutes: RouteRecordRaw[] = [

@@ -1,6 +1,6 @@
 <template>
   <div class="tags-view-container">
-    <el-scrollvar w-full whitespace-nowrap>
+    <!-- <el-scrollvar w-full whitespace-nowrap>
       <router-link
         class="tags-view-item"
         v-for="(tag, index) in visitedViews"
@@ -22,14 +22,14 @@
           </template>
         </el-dropdown>
       </router-link>
-    </el-scrollvar>
+    </el-scrollvar> -->
   </div>
 </template>
 
 <script lang="ts" setup>
 import { useSettingStore } from '@/stores/setting'
-import { useTagsView } from '@/stores/tagsView'
-import { RouteLocationNormalizedGeneric, RouteRecordRaw } from 'vue-router'
+// import { useTagsView } from '@/stores/tagsView'
+// import { RouteLocationNormalizedGeneric, RouteRecordRaw } from 'vue-router'
 import { join } from 'path-browserify'
 
 const store = useTagsView()
@@ -99,19 +99,16 @@ const enum CommandType {
   All = 'all',
   Other = 'other',
   Self = 'self',
-  Refresh = 'refresh'
+  Refresh = 'refresh',
 }
-const handleCommand = {
-  command: CommandType,
-  view: RouteLocationNormalizedGeneric
-} => {
+const handleCommand = (command, view) => {
   switch (command) {
     case CommandType.Other:
       deleteOtherView(view)
-      if(!isActive(view)){
+      if (!isActive(view)) {
         router.push(view.path)
       }
-      break;
+      break
     case CommandType.Self:
       closeSelectedTag(view)
       break
@@ -119,7 +116,7 @@ const handleCommand = {
       // 跳转到专门做刷新的路由，再通过这个路由回来即可
       deleteCacheView(view)
       router.push('/redirect' + view.path)
-      break;
+      break
   }
 }
 const settingsStore = useSettingStore()
